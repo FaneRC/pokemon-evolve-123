@@ -1,23 +1,32 @@
-should-i-evolve-this-pokemon/
-│
-├── backend/
-│   ├── app.py
-│   ├── requirements.txt
-│   ├── pokemon.csv
-│   └── tests/
-│       ├── test_logic.py
-│
-├── frontend/
-│   ├── public/
-│   │   ├── index.html
-│   │   └── styles.css
-│   ├── src/
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   └── components/
-│   │       ├── PokemonForm.js
-│   │       └── Recommendation.js
-│   ├── package.json
-│   └── .env
-│
-└── README.md
+name: CI
+
+on:
+	push:
+		branches:
+			- main
+	pull_request:
+
+jobs:
+	test-and-build:
+		runs-on: ubuntu-latest
+
+		steps:
+			- name: Checkout
+				uses: actions/checkout@v4
+
+			- name: Setup Node
+				uses: actions/setup-node@v4
+				with:
+					node-version: 20
+
+			- name: Enable Corepack
+				run: corepack enable
+
+			- name: Install dependencies
+				run: pnpm install --no-frozen-lockfile
+
+			- name: Run tests
+				run: pnpm test
+
+			- name: Build
+				run: pnpm build
