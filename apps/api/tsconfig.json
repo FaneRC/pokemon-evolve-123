@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"target": "ES2022",
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"strict": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"skipLibCheck": true,
+		"resolveJsonModule": true,
+		"outDir": "dist",
+		"rootDir": ".",
+		"types": ["node", "vitest/globals"]
+	},
+	"include": [
+		"src/app.ts",
+		"src/server.ts",
+		"src/controllers/**/*.ts",
+		"src/routes/**/*.ts",
+		"src/services/**/*.ts",
+		"src/types/**/*.ts",
+		"src/utils/**/*.ts",
+		"src/lib/**/*.ts",
+		"tests/**/*.ts"
+	],
+	"exclude": ["dist", "node_modules"]
+}

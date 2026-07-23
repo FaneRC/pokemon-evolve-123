@@ -1,0 +1,158 @@
+:root {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	color: #0f172a;
+	background: #f4f7fb;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+.app-shell {
+	min-height: 100vh;
+	width: min(980px, 100%);
+	margin: 0 auto;
+	padding: 24px;
+}
+
+.controls {
+	margin-top: 16px;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 8px 24px rgba(15, 23, 42, 0.09);
+	padding: 16px;
+	display: grid;
+	gap: 12px;
+}
+
+label {
+	display: grid;
+	gap: 6px;
+	font-size: 14px;
+}
+
+input,
+select,
+button {
+	font: inherit;
+	padding: 10px;
+	border-radius: 8px;
+	border: 1px solid #cbd5e1;
+}
+
+button {
+	cursor: pointer;
+	background: #0b3a66;
+	color: #fff;
+	border: 0;
+}
+
+button:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.error {
+	color: #b91c1c;
+}
+
+.result-card {
+	margin-top: 16px;
+	padding: 16px;
+	border-radius: 10px;
+	background: #ffffff;
+	border: 1px solid #e2e8f0;
+}
+
+.confidence {
+	font-weight: 600;
+}
+
+.option-card {
+	margin-top: 14px;
+	padding-top: 14px;
+	border-top: 1px solid #e2e8f0;
+}
+
+.search {
+	position: relative;
+}
+
+.suggestions {
+	position: absolute;
+	z-index: 10;
+	margin: 6px 0 0;
+	padding: 0;
+	list-style: none;
+	width: 100%;
+	border: 1px solid #cbd5e1;
+	border-radius: 8px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.suggestions button {
+	width: 100%;
+	text-align: left;
+	border-radius: 0;
+	background: #fff;
+	color: #0f172a;
+	border-bottom: 1px solid #edf2f7;
+}
+
+.hint {
+	margin: 6px 0 0;
+	font-size: 13px;
+	color: #475569;
+}
+
+.stats-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 8px;
+}
+
+.stats-table th,
+.stats-table td {
+	border-bottom: 1px solid #e2e8f0;
+	text-align: left;
+	padding: 8px;
+	font-size: 14px;
+}
+
+.bar-track {
+	width: 100%;
+	height: 6px;
+	background: #e2e8f0;
+	border-radius: 999px;
+	margin-top: 6px;
+}
+
+.bar-fill {
+	height: 100%;
+	border-radius: 999px;
+	background: #0b3a66;
+}
+
+.delta-up {
+	color: #166534;
+}
+
+.delta-down {
+	color: #b91c1c;
+}
+
+@media (max-width: 680px) {
+	.app-shell {
+		padding: 14px;
+	}
+	.stats-table th,
+	.stats-table td {
+		font-size: 12px;
+		padding: 6px;
+	}
+}
